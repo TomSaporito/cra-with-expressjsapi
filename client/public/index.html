@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="theme-color" content="#000000"> -->
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  
+  <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
+  <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="%PUBLIC_URL%/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="%PUBLIC_URL%/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="%PUBLIC_URL%/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="%PUBLIC_URL%/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/icons/favicon-16x16.png">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="%PUBLIC_URL%/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+  <style>
+    .container {
+      position: relative;
+    }
+
+    .loader-container {
+      display: none;
+    }
+
+    .loader-container.drop-in.loading {
+      color: #000000;
+      font-size: 2rem;
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .loader-container.loading .loader-drop {
+      animation: drop 1s linear 1;
+      animation-fill-mode: forwards;
+    }
+
+    /* .loader-container.loading .loader-text {
+      animation: shine 2s linear infinite;
+      animation-delay: 1s;
+    } */
+
+    @keyframes shine {
+      16.6% {
+        font-family: Arial, sans-serif;
+      }
+      33.3% {
+        font-family: Times, serif;
+      }
+      50% {
+        font-family: Andale Mono, monospace;
+      }
+      66.3% {
+        font-family: Comic Sans, Comic Sans MS, cursive;
+      }
+      83.6% {
+        font-family: Impact, fantasy;
+      }
+      /*Arial, sans-serif; 
+          Helvetica, sans-serif;
+          Gill Sans, sans-serif;
+          Lucida, sans-serif;
+          Helvetica Narrow, sans-serif;
+          sans-serif; */
+      /* Times, serif;
+          Times New Roman, serif;
+          Palatino, serif;
+          Bookman, serif;
+          New Century Schoolbook, serif;
+          serif; */
+      /* Andale Mono, monospace;
+          Courier New, monospace;
+          Courier, monospace;
+          Lucidatypewriter, monospace;
+          Fixed, monospace;
+          monospace; */
+      /* Comic Sans, Comic Sans MS, cursive;
+          Zapf Chancery, cursive;
+          Coronetscript, cursive;
+          Florence, cursive;
+          Parkavenue, cursive;
+          cursive; */
+      /* Impact, fantasy;
+          Arnoldboecklin, fantasy;
+          Oldtown, fantasy;
+          Blippo, fantasy;
+          Brushstroke, fantasy;
+          fantasy; */
+    }
+
+    @keyframes drop {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0
+      }
+      50% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+    }
+  </style>
+  <title>Pondlebob</title>
+</head>
+
+<body>
+  <span hidden="hidden" data-lazy-style="bootstrap" data-href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    data-integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" data-crossorigin="anonymous"></span>
+  <div id="full-page-loader" class="loader-container loading drop-in">
+    <div class="loader-drop">
+      <span class="loader-text"><img src="/images/logo-sm.png" alt="Pondlebob"/></span>
+    </div>
+  </div>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- <script defer src="/dist/main.bundle.min.js"></script> -->
+</body>
+
+</html>
